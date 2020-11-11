@@ -1,5 +1,7 @@
 class Popper {
   
+  PShape popper;
+  
   float xPosition;
   float yPosition;
   
@@ -11,8 +13,12 @@ class Popper {
     
   }
   
+  void load(){
+    popper = loadShape("popper.svg");
+  }
+  
   void display(){ 
-    
+    shape(popper, xPosition, yPosition, width, height);
   }
   
   void update(){

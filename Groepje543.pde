@@ -4,13 +4,15 @@ PImage background;
 
 void setup() {
   size(600, 900);
+  shapeMode(CENTER);
   popper = new Popper(height/2, width/2);
   background = loadImage("background.png");
+  popper.load();
 }
 
 void draw() {
-  popper.display();
   image(background, 0, 0, 600, 900);
+  popper.display();
 }
 
 void mousePressed(){
