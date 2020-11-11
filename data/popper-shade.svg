@@ -13,7 +13,7 @@
    version="1.1"
    id="svg8"
    inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
-   sodipodi:docname="popper.svg">
+   sodipodi:docname="popper-shade.svg">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -54,11 +54,11 @@
      id="layer1"
      transform="translate(-44.602539,-60.414176)">
     <path
-       id="path833"
-       style="fill:#7878bd;fill-opacity:1;stroke:none;stroke-width:0.173347"
+       id="path833-7"
+       style="fill:#bdbdbd;fill-opacity:1;stroke:none;stroke-width:0.17366"
        inkscape:transform-center-x="-9.56135"
-       inkscape:transform-center-y="-1.117615"
-       d="m 82.273718,230.18825 22.168012,-100.88789 61.23963,39.82718 z"
-       sodipodi:nodetypes="cccc" />
+       inkscape:transform-center-y="-1.1216544"
+       d="m 104.44173,129.30036 c 0,0 10.58585,-4.36009 35.34452,11.8078 24.75867,16.1679 25.89511,28.01938 25.89511,28.01938 z"
+       sodipodi:nodetypes="czcc" />
   </g>
 </svg>

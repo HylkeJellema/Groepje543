@@ -3,14 +3,15 @@ Popper popper;
 PImage background;
 
 void setup() {
-  size(600, 900);
+  size(1200, 900);
   shapeMode(CENTER);
-  popper = new Popper(height/2, width/2);
+  popper = new Popper(width/2, height/2);
   background = loadImage("background.png");
   popper.load();
 }
 
 void draw() {
+  background(255);
   image(background, 0, 0, 600, 900);
   popper.display();
 }
