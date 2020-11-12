@@ -15,6 +15,7 @@ class Popper {
   PVector origin;
   
   boolean pulled = false;
+  boolean pulledAlready = false;
   float timer;
   
   
@@ -24,7 +25,7 @@ class Popper {
     yPosition = initYposition;
     
     confetties = new ArrayList<Confetti>();
-    origin = new PVector(xPosition,yPosition);
+    origin = new PVector(xPosition-20,yPosition);
   }
   
   void load(){
@@ -34,18 +35,33 @@ class Popper {
   
   void display(){ 
     shape(popperShade, xPosition, yPosition, 600, 900); //Display bottom layer of Popper image first
-    addConfetti(); //Draw confetti inbetween
-    if(pulled){
-      run();
+    if(pulled && !pulledAlready){
+      if(timer < 300){
+        run();
+      }
+      if(timer < 100){
+        addConfetti(); //Draw confetti inbetween
+      }
+      timer();
     }
     shape(popper, xPosition, yPosition, 600, 900); //Display top layer of Popper image
+    println(timer);
   }
   
   void pull(float tempMouseX, float tempMouseY) {
-    /*if(){
+   if((tempMouseX <= xPosition+200) && (tempMouseX >= xPosition-200) && (tempMouseY <=yPosition+200) && (tempMouseY >= yPosition-200)){
       pulled = true;
-    }*/
-    
+     }
+  }
+  
+  void timer(){
+    if(timer > 250){
+      timer=0;
+      pulled=false;
+      pulledAlready=true;
+    } else {
+      timer++;
+    }
   }
   
   void addConfetti(){

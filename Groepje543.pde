@@ -29,4 +29,5 @@ void draw() {
 }
 
 void mousePressed() {
+  popper.pull(mouseX,mouseY);
 }
