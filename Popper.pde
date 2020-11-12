@@ -42,9 +42,9 @@ class Popper {
   }
   
   void pull(float tempMouseX, float tempMouseY) {
-    if(){
+    /*if(){
       pulled = true;
-    }
+    }*/
     
   }
   

@@ -7,6 +7,7 @@ float stage;
 void setup() {
   size(1200, 900);
   shapeMode(CENTER);
+  stage = 1;
   front = loadImage("front.png");
   popper = new Popper(width/2, height/2);
   background = loadImage("background.png");
@@ -14,17 +15,15 @@ void setup() {
 }
 
 void draw() {
-  background(255);
-  image(background, 0, 0, 600, 900);
-  popper.display();
   if (stage==1) {
-    image(front, 0, 0, 600, 900);
+    image(front, 600, 0, 600, 900);
     if (keyPressed) {
       stage = stage + 1;
     }
   }
   if (stage==2) {
-    image(background, 0, 0, 600, 900);
+    image(background, 0, 0, 1200, 900);
+    line(600, 0, 600, 900);
     popper.display();
   }
 }
