@@ -4,6 +4,8 @@ PImage front;
 PImage background;
 float stage;
 
+Text text;
+
 void setup() {
   size(1200, 900);
   shapeMode(CENTER);
@@ -12,6 +14,8 @@ void setup() {
   popper = new Popper(width/2, height/2);
   background = loadImage("background.png");
   popper.load();
+  
+  text = new Text();
 }
 
 void draw() {
@@ -25,6 +29,7 @@ void draw() {
     image(background, 0, 0, 1200, 900);
     line(600, 0, 600, 900);
     popper.display();
+    text.display();
   }
 }
 
