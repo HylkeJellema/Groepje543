@@ -22,7 +22,7 @@ void draw() {
   if (stage==1) {
     image(front, 600, 0, 600, 900);
     if (keyPressed) {
-      stage = stage + 1;
+      setStage(2);
     }
   }
   if (stage==2) {
@@ -33,5 +33,10 @@ void draw() {
   }
 }
 
+void setStage(int stage) {
+  this.stage = stage;
+}
+
 void mousePressed() {
+  popper.pull(mouseX,mouseY);
 }
