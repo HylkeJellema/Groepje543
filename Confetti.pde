@@ -24,12 +24,12 @@ class Confetti {
     b = random(0,255);
   }
 
-  void run() {
+  void run() { //Run the animating
     update();
     display();
   }
 
-  void update() {
+  void update() { //Animate the confetti
     speed.add(acceleration);
     position.add(speed);
     lifespan -= 1.0;
@@ -41,7 +41,7 @@ class Confetti {
     ellipse(position.x, position.y, confettiSize, confettiSize);
   }
 
-  boolean isDead() {
+  boolean isDead() { //If the confetties lifespan is over, it's dead. Boolean is used in Popper class to remove it from the ArrayList.
     if (lifespan < 0.0) {
       return true;
     } else {

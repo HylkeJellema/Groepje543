@@ -7,6 +7,7 @@ class Popper {
   
   PShape popper;
   PShape popperShade;
+  float popperScale = 1;
   
   float xPosition;
   float yPosition;
@@ -16,7 +17,7 @@ class Popper {
   
   boolean pulled = false;
   boolean pulledAlready = false;
-  float timer;
+  int timer;
   
   
   Popper(float initXposition, float initYposition) {
@@ -24,43 +25,62 @@ class Popper {
     xPosition = initXposition;
     yPosition = initYposition;
     
-    confetties = new ArrayList<Confetti>();
-    origin = new PVector(xPosition-20,yPosition);
+    confetties = new ArrayList<Confetti>(); //Arraylist for the confetti particles
+    origin = new PVector(xPosition-20,yPosition); //Vector used as origin of the particles
   }
   
-  void load(){
+  void load(){ //Loading images (svg's)
     popper = loadShape("popper.svg");
     popperShade = loadShape("popper-shade.svg");
   }
   
-  void display(){ 
-    shape(popperShade, xPosition, yPosition, 600, 900); //Display bottom layer of Popper image first
-    if(pulled && !pulledAlready){
+  void display(){
+    pushMatrix();
+    translate(xPosition,yPosition);
+    scale(popperScale);
+    shape(popperShade, 0, 0, 600, 900); //Display bottom layer of Popper image first
+    popMatrix();
+    
+    if(pulled && !pulledAlready){ //Launch confetti if popper is pulled and has not been pulled already.
       if(timer < 300){
-        run();
+        run(); //Animating confetti, this runs slightly longer then addConfetti() to let the confetti fly away before hiding.
       }
       if(timer < 100){
-        addConfetti(); //Draw confetti inbetween
+        addConfetti(); //Spawining confetti inbetween the two shapes
       }
-      timer();
+      timer(); //Run the timer.
+      scaling(); //Run the scaling animation.
     }
-    shape(popper, xPosition, yPosition, 600, 900); //Display top layer of Popper image
-    println(timer);
+    
+    pushMatrix();
+    translate(xPosition,yPosition);
+    scale(popperScale);
+    shape(popper, 0, 0, 600, 900); //Display top layer of Popper image
+    popMatrix();
+    
   }
   
-  void pull(float tempMouseX, float tempMouseY) {
+  void pull(float tempMouseX, float tempMouseY) { //Set pulled to true if the mouse is pressed over the popper.
    if((tempMouseX <= xPosition+200) && (tempMouseX >= xPosition-200) && (tempMouseY <=yPosition+200) && (tempMouseY >= yPosition-200)){
-      pulled = true;
+      pulled = true; 
      }
   }
   
   void timer(){
-    if(timer > 250){
+    if(timer > 250){ //If timer is over 250 frames (about 4 seconds) reset it
       timer=0;
       pulled=false;
-      pulledAlready=true;
+      pulledAlready=true; //Store that the Popper has been popped.
     } else {
-      timer++;
+      timer++; //Runs timer by adding 1 unit every frame
+    }
+  }
+  
+  void scaling(){
+    if(timer < 15){ //Scale the Popper up if timer is below 15 frames
+      popperScale = popperScale + 0.03;
+    } else if (timer > 15 && popperScale > 1){ //Scale the Popper back to it's original state.
+      popperScale = popperScale - 0.03;
     }
   }
   
@@ -68,7 +88,7 @@ class Popper {
      confetties.add(new Confetti(origin)); //Spawn particles from origin of Popper.
   }
   
-  void run() {
+  void run() { //Animate confetti 
     for (int i = confetties.size()-1; i >= 0; i--) {
       Confetti c = confetties.get(i);
       c.run();
