@@ -16,7 +16,7 @@ void setup() {
   nextStage = false;
   popper = new Popper(width/4, height/2);
   popper.load();
-  
+
   text = new Text();
 }
 
@@ -42,11 +42,16 @@ void draw() {
   }
 }
 
-void keyPressed(){
+void keyPressed() {
   //go to next stage on key press
- nextStage = true;
+  nextStage = true;
 }
 
 void mousePressed() {
-  popper.pull(mouseX,mouseY);
+  popper.pull(mouseX, mouseY);
+  text.setShake(true);
+}
+
+void mouseReleased() {
+  text.setShake(false);
 }
