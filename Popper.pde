@@ -19,6 +19,7 @@ class Popper {
   boolean pulledAlready = false;
   int timer;
   
+  Text text; //Use Text class
   
   Popper(float initXposition, float initYposition) {
     
@@ -27,6 +28,8 @@ class Popper {
     
     confetties = new ArrayList<Confetti>(); //Arraylist for the confetti particles
     origin = new PVector(xPosition-20,yPosition); //Vector used as origin of the particles
+    
+    text = new Text(xPosition,yPosition-100); //Create text object
   }
   
   void load(){ //Loading images (svg's)
@@ -44,6 +47,7 @@ class Popper {
     if(pulled && !pulledAlready){ //Launch confetti if popper is pulled and has not been pulled already.
       if(timer < 300){
         run(); //Animating confetti, this runs slightly longer then addConfetti() to let the confetti fly away before hiding.
+        
       }
       if(timer < 100){
         addConfetti(); //Spawining confetti inbetween the two shapes
@@ -51,6 +55,8 @@ class Popper {
       timer(); //Run the timer.
       scaling(); //Run the scaling animation.
     }
+    
+    text.display();
     
     pushMatrix();
     translate(xPosition,yPosition);

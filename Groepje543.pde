@@ -5,8 +5,6 @@ PImage background;
 float stage;
 boolean nextStage;
 
-Text text;
-
 void setup() {
   size(1200, 900);
   shapeMode(CENTER);
@@ -17,7 +15,6 @@ void setup() {
   popper = new Popper(width/4, height/2);
   popper.load();
   
-  text = new Text();
 }
 
 void draw() {
@@ -38,7 +35,6 @@ void draw() {
     stroke(0);
     line(600, 0, 600, 900);
     popper.display();
-    text.display();
   }
 }
 
@@ -48,5 +44,6 @@ void keyPressed(){
 }
 
 void mousePressed() {
+  //Pop the Popper when you pull (click) on the Popper
   popper.pull(mouseX,mouseY);
 }
