@@ -1,6 +1,6 @@
 class Letter {
   char letter;
-  float homeX,homeY;
+  float homeX, homeY;
   float x,y;
   
   Letter(float x, float y, char letter) {

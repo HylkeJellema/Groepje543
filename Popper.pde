@@ -26,10 +26,13 @@ class Popper {
     xPosition = initXposition;
     yPosition = initYposition;
     
+    //xText = initXposition;
+    //yText = initYposition;
+    
     confetties = new ArrayList<Confetti>(); //Arraylist for the confetti particles
     origin = new PVector(xPosition-20,yPosition); //Vector used as origin of the particles
     
-    text = new Text(xPosition,yPosition-100); //Create text object
+    text = new Text(xPosition, yPosition-100); //Create text object
   }
   
   void load(){ //Loading images (svg's)
@@ -51,12 +54,13 @@ class Popper {
       }
       if(timer < 100){
         addConfetti(); //Spawining confetti inbetween the two shapes
+        text.shake = true;
       }
       timer(); //Run the timer.
       scaling(); //Run the scaling animation.
     }
     
-    text.display();
+    text.display(); //Display text in between Popper layers
     
     pushMatrix();
     translate(xPosition,yPosition);
@@ -79,6 +83,12 @@ class Popper {
       pulledAlready=true; //Store that the Popper has been popped.
     } else {
       timer++; //Runs timer by adding 1 unit every frame
+    }
+    
+    if (timer > 150){
+      text.shake=false;
+    } else {
+      //
     }
   }
   
