@@ -12,6 +12,7 @@ class Letter {
   void display() {
     fill(0);
     textAlign(LEFT);
+    textSize(50);
     text(letter,x,y);
   }
   

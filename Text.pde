@@ -13,7 +13,7 @@ class Text {
     int x = 100;    
     for (int i = 0; i < text.length (); i ++ ) {
       letters[i] = new Letter(x, 100, text.charAt(i)); 
-      x += textWidth(text.charAt(i));
+      x += textWidth(text.charAt(i)) *4;
     }
   }
 
