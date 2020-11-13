@@ -1,9 +1,15 @@
+/*
+Class for the Text
+Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
+*/
+
 class Text {
   String[] lines;
   String text;
   String[] words;
   Letter[] letters;
   boolean shake;
+  boolean home;
   float x; 
   float y;
   
@@ -27,9 +33,9 @@ class Text {
       if (shake) {
         letters[i].shake();
       }
-      //else {
-      //  letters[i].home();
-      //}
+      else if(home){
+        letters[i].home();
+      }
     }
   }
 

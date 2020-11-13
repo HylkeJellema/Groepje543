@@ -32,7 +32,7 @@ class Popper {
     confetties = new ArrayList<Confetti>(); //Arraylist for the confetti particles
     origin = new PVector(xPosition-20,yPosition); //Vector used as origin of the particles
     
-    text = new Text(xPosition, yPosition-100); //Create text object
+    text = new Text(xPosition-100, yPosition-200); //Create text object
   }
   
   void load(){ //Loading images (svg's)
@@ -87,9 +87,8 @@ class Popper {
     
     if (timer > 150){
       text.shake=false;
-    } else {
-      //
-    }
+      text.home=true;
+    } 
   }
   
   void scaling(){
