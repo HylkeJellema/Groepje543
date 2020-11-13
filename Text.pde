@@ -26,9 +26,10 @@ class Text {
       letters[i].display();
       if (shake) {
         letters[i].shake();
-      } else {
-        letters[i].home();
       }
+      //else {
+      //  letters[i].home();
+      //}
     }
   }
 

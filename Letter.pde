@@ -22,7 +22,7 @@ class Letter {
   }
   
   void home() { 
-    x = lerp(x, homeX, 0.1);
-    y = lerp(y, homeY, 0.1);
+    x = lerp(x, homeX + width*1/3, 0.2);
+    y = lerp(y, homeY, 0.2);
   }
 }

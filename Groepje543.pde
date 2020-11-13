@@ -46,9 +46,9 @@ void keyPressed() {
 void mousePressed() {
   //Pop the Popper when you pull (click) on the Popper
   popper.pull(mouseX,mouseY);
-  popper.text.setShake(true);
+  //popper.text.setShake(true);
 }
 
 void mouseReleased() {
-  popper.text.setShake(false);
+  //popper.text.setShake(false);
 }
