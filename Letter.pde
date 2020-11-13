@@ -3,10 +3,10 @@ class Letter {
   float homex,homey;
   float x,y;
   
-  Letter(float x_, float y_, char letter_) {
-    homex = x = x_;
-    homey = y = y_;
-    letter = letter_;
+  Letter(float x, float y, char letter) {
+    homex = this.x = x;
+    homey = this.y = y;
+    this.letter = letter;
   }
   
   void display() {
