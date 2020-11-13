@@ -17,12 +17,12 @@ class Letter {
   }
   
   void shake() {
-    x += random(-2,2);
-    y += random(-2,2);
+    x += random(-10, 10);
+    y += random(-10, 10);
   }
   
   void home() { 
-    x = homex;
-    y = homey;
+    x = lerp(x, homex, 0.1);
+    y = lerp(y, homey, 0.1);
   }
 }
