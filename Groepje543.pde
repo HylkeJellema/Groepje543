@@ -14,7 +14,7 @@ void setup() {
   front = loadImage("front.png");
   stage = 1;
   nextStage = false;
-  popper = new Popper(width/2, height/2);
+  popper = new Popper(width/4, height/2);
   popper.load();
   
   text = new Text();
