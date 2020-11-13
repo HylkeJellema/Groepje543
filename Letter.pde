@@ -1,11 +1,11 @@
 class Letter {
   char letter;
-  float homex,homey;
+  float homeX,homeY;
   float x,y;
   
   Letter(float x, float y, char letter) {
-    homex = this.x = x;
-    homey = this.y = y;
+    homeX = this.x = x;
+    homeY = this.y = y;
     this.letter = letter;
   }
   
@@ -22,7 +22,7 @@ class Letter {
   }
   
   void home() { 
-    x = lerp(x, homex, 0.1);
-    y = lerp(y, homey, 0.1);
+    x = lerp(x, homeX, 0.1);
+    y = lerp(y, homeY, 0.1);
   }
 }
