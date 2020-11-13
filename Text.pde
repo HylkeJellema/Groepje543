@@ -3,6 +3,7 @@ class Text {
   String text;
   String[] words;
   Letter[] letters;
+  boolean shake;
 
   Text(float initX, float initY) {
     lines = loadStrings("text.txt");
@@ -21,11 +22,15 @@ class Text {
   void display() {
     for (int i = 0; i < letters.length; i++) {
       letters[i].display();
-      if (mousePressed) {
+      if (shake) {
         letters[i].shake();
       } else {
         letters[i].home();
       }
     }
+  }
+
+  void setShake(boolean shake) {
+    this.shake = shake;
   }
 }

@@ -3,10 +3,10 @@ class Letter {
   float homex,homey;
   float x,y;
   
-  Letter(float x_, float y_, char letter_) {
-    homex = x = x_;
-    homey = y = y_;
-    letter = letter_;
+  Letter(float x, float y, char letter) {
+    homex = this.x = x;
+    homey = this.y = y;
+    this.letter = letter;
   }
   
   void display() {
@@ -17,12 +17,12 @@ class Letter {
   }
   
   void shake() {
-    x += random(-2,2);
-    y += random(-2,2);
+    x += random(-10, 10);
+    y += random(-10, 10);
   }
   
   void home() { 
-    x = homex;
-    y = homey;
+    x = lerp(x, homex, 0.1);
+    y = lerp(y, homey, 0.1);
   }
 }

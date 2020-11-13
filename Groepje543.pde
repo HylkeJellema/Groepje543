@@ -38,12 +38,17 @@ void draw() {
   }
 }
 
-void keyPressed(){
+void keyPressed() {
   //go to next stage on key press
- nextStage = true;
+  nextStage = true;
 }
 
 void mousePressed() {
   //Pop the Popper when you pull (click) on the Popper
   popper.pull(mouseX,mouseY);
+  text.setShake(true);
+}
+
+void mouseReleased() {
+  text.setShake(false);
 }
