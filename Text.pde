@@ -14,6 +14,7 @@ class Text {
   float y;
   
   Text(float initX, float initY) {
+    //load the text file into individual strings and split into words and letters
     lines = loadStrings("text.txt");
     text = join(lines, " ");
     words = split(text, " ");
@@ -27,18 +28,21 @@ class Text {
     }
   }
 
+  //calls the functions from letters on specific actions
   void display() {
+    //display individual letters from array
     for (int i = 0; i < letters.length; i++) {
       letters[i].display();
       if (shake) {
-        letters[i].shake();
+        letters[i].shake();    //shake called when boolean shake is true
       }
       else if(home){
-        letters[i].home();
+        letters[i].home();     //otherwise home is called
       }
     }
   }
 
+  //boolean shake is set from popper class when its clicked (see popper.display())
   void setShake(boolean shake) {
     this.shake = shake;
   }
