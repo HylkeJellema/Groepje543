@@ -7,7 +7,7 @@ class Letter {
   char letter;
   float homeX, homeY;
   float x, y;
-  float letterSize = 0;
+  float letterSize = 0.0001;
   PFont font;
 
   Letter(float x, float y, char letter) {
@@ -22,10 +22,12 @@ class Letter {
     fill(13, 134, 252);
     textAlign(LEFT);
     textFont(font);
+    textSize(letterSize);
     text(letter, x, y);
   }
 
   void shake() {
+    letterSize = lerp(letterSize,letterSize+40,0.01);
     x = lerp(x, x+50, 0.02);
     y = lerp(y, y-50, 0.02);
     x += random(-10, 10);
