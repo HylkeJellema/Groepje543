@@ -1,6 +1,8 @@
 /*
 Class for the Popper
 Particle system based on Daniel Shiffmans example. https://processing.org/examples/simpleparticlesystem.html
+- Used the way Shiffman handles the array (line 16, 30, 100-102, 104-114)
+- Used the way Shiffman use vectors for position (line 32, 102)
 */
 
 class Popper {
@@ -25,9 +27,6 @@ class Popper {
     
     xPosition = initXposition;
     yPosition = initYposition;
-    
-    //xText = initXposition;
-    //yText = initYposition;
     
     confetties = new ArrayList<Confetti>(); //Arraylist for the confetti particles
     origin = new PVector(xPosition-20,yPosition); //Vector used as origin of the particles

@@ -1,6 +1,8 @@
 /*
 Class for the confetti particles 
 Based on Daniel Shiffmans example. https://processing.org/examples/simpleparticlesystem.html
+- Used Shiffmans vectors (lines 9-11, 19-21, 33-37)
+- Used Shiffmans lifespan system (lines 13, 23, 37, 46-52)
 */
 
 class Confetti {

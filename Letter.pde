@@ -1,13 +1,13 @@
 /*
 Class for the Letter
- Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
+Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
  */
 
 class Letter {
   char letter;
   float homeX, homeY;
   float x, y;
-  float letterSize = 0.0001;
+  float letterSize;
   PFont font;
 
   Letter(float x, float y, char letter) {
