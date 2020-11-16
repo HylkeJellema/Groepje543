@@ -1,6 +1,7 @@
 /*
 Class for the Letter
 Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
+- Adapted Shiffmans shake and home methodes (lines 16-17, 33-45)
  */
 
 class Letter {

@@ -1,6 +1,8 @@
 /*
 Class for the Text
 Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
+- Adapted Shiffmans draw methodes (lines 33-44)
+- Used initialization for letters (lines 20-30)
 */
 
 class Text {
