@@ -5,8 +5,7 @@ Based on Daniel Shiffmans example. https://processing.org/examples/simpleparticl
 - Used Shiffmans lifespan system (lines 13, 23, 37, 46-52)
 */
 
-class Confetti {
-  
+class Confetti {  
   PVector position;
   PVector speed;
   PVector acceleration;
@@ -38,8 +37,10 @@ class Confetti {
   }
 
   void display() {
-    stroke(r,g,b, lifespan); //Opacity of particles is terdermined by their lifespan. They fade out.
-    fill(r,g,b, lifespan);
+   // stroke(c, lifespan); //Opacity of particles is terdermined by their lifespan. They fade out.
+    color c = background.get(int(position.x),int(position.y));
+  color inverse = color(255-red(c), 255-green(c), 255-blue(c));
+    fill(5*inverse, lifespan);
     ellipse(position.x, position.y, confettiSize, confettiSize);
   }
 
