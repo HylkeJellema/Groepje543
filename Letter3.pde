@@ -9,7 +9,7 @@ class Letter3 extends Letter {
   }
   
   void display() {
-    fill(13, 134, 252);
+    fill(247, 241, 57);
     textFont(myFont);
     super.display();
   }
