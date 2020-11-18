@@ -26,12 +26,13 @@ class Text {
     letters = new Letter[text.length()];
 
     font1 = createFont("BebasNeue-Regular.ttf", 50);
-    font2 = createFont("OldEnglishTextMT-50.vlw", 50);
-    font3 = createFont("BookmanOldStyle-50.vlw", 50);
-    font4 = createFont("CorbelLight-50.vlw", 50);
+    font2 = loadFont("OldEnglishTextMT-50.vlw");
+    font3 = loadFont("BookmanOldStyle-50.vlw");
+    font4 = loadFont("CorbelLight-50.vlw");
 
     x = initX;  
     y = initY;
+    
     for (int i = 0; i < text.length()/4; i ++ ) {
       letters[i] = new Letter1(x, y, text.charAt(i),font1); 
       x += textWidth(text.charAt(i)) *4;
