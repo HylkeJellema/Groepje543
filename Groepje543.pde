@@ -50,8 +50,11 @@ void keyPressed() {
 }
 
 void mousePressed() {
-  //Pop the Popper when you pull (click) on the Popper
-  popper.pull(mouseX,mouseY);
+  //Pop the Popper when you pull (click) on the Popper only when the card is open.
+  if (stage == 2){
+    popper.pull(mouseX,mouseY);
+  }
+  
   //popper.text.setShake(true);
 }
 
