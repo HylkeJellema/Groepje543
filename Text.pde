@@ -33,19 +33,19 @@ class Text {
     x = initX;  
     y = initY;
     for (int i = 0; i < text.length()/4; i ++ ) {
-      letters[i] = new Letter1(x, y, text.charAt(i)); 
+      letters[i] = new Letter1(x, y, text.charAt(i),font1); 
       x += textWidth(text.charAt(i)) *4;
     }
     for (int i = text.length()/4; i < text.length()/2; i ++ ) {
-      letters[i] = new Letter2(x, y, text.charAt(i)); 
+      letters[i] = new Letter2(x, y, text.charAt(i),font2); 
       x += textWidth(text.charAt(i)) *4;
     }
     for (int i = text.length()/2; i < text.length()*3/4; i ++ ) {
-      letters[i] = new Letter3(x, y, text.charAt(i)); 
+      letters[i] = new Letter3(x, y, text.charAt(i),font3); 
       x += textWidth(text.charAt(i)) *4;
     }
     for (int i = text.length()*3/4; i < text.length(); i ++ ) {
-      letters[i] = new Letter4(x, y, text.charAt(i)); 
+      letters[i] = new Letter4(x, y, text.charAt(i),font4); 
       x += textWidth(text.charAt(i)) *4;
     }
   }
