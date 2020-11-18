@@ -18,7 +18,7 @@ void setup() {
   shapeMode(CENTER);
   background = loadImage("background.png");
   front = loadImage("front.png");
-  stage = 1;
+  stage = 2;
   nextStage = false;
   popper = new Popper(width/4, height/2);
   popper.load();
@@ -41,7 +41,7 @@ void draw() {
   if (stage==2) {
     image(background, 0, 0, 1200, 900);
     gift.display();
-    stroke(0);
+    stroke(255);
     line(600, 0, 600, 900);
     popper.display();
   }

@@ -35,6 +35,7 @@ class Confetti {
     color c = background.get(int(position.x),int(position.y));
     color inverse = color(255-red(c), 255-green(c), 255-blue(c));
     fill(5*inverse, lifespan);    //inverse is amplified by five to make the colors lighter and more fun
+    noStroke();
     ellipse(position.x, position.y, confettiSize, confettiSize);
   }
 
