@@ -7,6 +7,7 @@ Hylke Jellema s2192098, Rachel den Otter s2610973, Thomas van Klink s2555913 and
 */
 
 Popper popper;
+Gift gift;
 PImage front;
 PImage background;
 float stage;
@@ -21,6 +22,7 @@ void setup() {
   nextStage = false;
   popper = new Popper(width/4, height/2);
   popper.load();
+  gift = new Gift();
 }
 
 void draw() {
@@ -38,6 +40,7 @@ void draw() {
   //show the inside of the card in the second stage
   if (stage==2) {
     image(background, 0, 0, 1200, 900);
+    gift.display();
     stroke(0);
     line(600, 0, 600, 900);
     popper.display();
@@ -68,3 +71,7 @@ void mouseMoved() {
   //Highlight around mouse
   
  }
+
+void mouseDragged(){
+  gift.shake(mouseX,mouseY); 
+}

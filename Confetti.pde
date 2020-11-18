@@ -31,10 +31,10 @@ class Confetti {
   }
 
   void display() {
-   // stroke(c, lifespan); //Opacity of particles is terdermined by their lifespan. They fade out.
+   // color of confetti is the inverse from the background
     color c = background.get(int(position.x),int(position.y));
     color inverse = color(255-red(c), 255-green(c), 255-blue(c));
-    fill(5*inverse, lifespan);
+    fill(5*inverse, lifespan);    //inverse is amplified by five to make the colors lighter and more fun
     ellipse(position.x, position.y, confettiSize, confettiSize);
   }
 
