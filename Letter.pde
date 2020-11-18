@@ -9,20 +9,18 @@ class Letter {
   float homeX, homeY;
   float x, y;
   float letterSize;
-  PFont font;
+
 
   Letter(float x, float y, char letter) {
     homeX = this.x = x;
     homeY = this.y = y;
     this.letter = letter;
     letterSize = 0.00001;
-    font = createFont("BebasNeue-Regular.ttf", 50);
+
   }
 
   void display() {
-    fill(13, 134, 252);
     textAlign(LEFT);
-    textFont(font);
     textSize(letterSize);
     text(letter, x, y);
   }

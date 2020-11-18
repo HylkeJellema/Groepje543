@@ -1,27 +1,34 @@
 /*
 Class for the Text
-Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
-- Adapted Shiffmans draw methodes (lines 33-44)
-- Used initialization for letters (lines 20-30)
-*/
+ Based on Daniel Shiffmans Textbreakingup example. http://learningprocessing.com/examples/chp17/example-17-06-textbreakingup
+ - Adapted Shiffmans draw methodes (lines 33-44)
+ - Used initialization for letters (lines 20-30)
+ */
 
 class Text {
   String[] lines;
   String text;
   String[] words;
-  
+
   Letter[] letters;
   boolean shake;
   boolean home;
   float x; 
   float y;
-  
+
+  PFont font1, font2, font3, font4;
+
   Text(float initX, float initY) {
     //load the text file into individual strings and split into words and letters
     lines = loadStrings("text.txt");
     text = join(lines, " ");
     //words = split(text, " ");
     letters = new Letter[text.length()];
+
+    font1 = createFont("BebasNeue-Regular.ttf", 50);
+    font2 = createFont("OldEnglishTextMT-50.vlw", 50);
+    font3 = createFont("BookmanOldStyle-50.vlw", 50);
+    font4 = createFont("CorbelLight-50.vlw", 50);
 
     x = initX;  
     y = initY;
@@ -40,7 +47,7 @@ class Text {
     for (int i = text.length()*3/4; i < text.length(); i ++ ) {
       letters[i] = new Letter4(x, y, text.charAt(i)); 
       x += textWidth(text.charAt(i)) *4;
-    }    
+    }
   }
 
   //calls the functions from letters on specific actions
@@ -50,8 +57,7 @@ class Text {
       letters[i].display();
       if (shake) {
         letters[i].shake();    //shake called when boolean shake is true
-      }
-      else if(home){
+      } else if (home) {
         letters[i].home();     //otherwise home is called
       }
     }
