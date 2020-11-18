@@ -32,7 +32,7 @@ class Text {
 
     x = initX;  
     y = initY;
-    
+
     for (int i = 0; i < text.length()/4; i ++ ) {
       letters[i] = new Letter1(x, y, text.charAt(i),font1); 
       x += textWidth(text.charAt(i)) *4;
@@ -49,6 +49,23 @@ class Text {
       letters[i] = new Letter4(x, y, text.charAt(i),font4); 
       x += textWidth(text.charAt(i)) *4;
     }
+
+    //for (int i = 0; i < text.length(); i = i + 4 ) {
+    //  letters[i] = new Letter1(x, y, text.charAt(i), font1); 
+    //  x += textWidth(text.charAt(i)) *4;
+    //}
+    //for (int i = 1; i < text.length(); i = i + 4 ) {
+    //  letters[i] = new Letter2(x, y, text.charAt(i), font2); 
+    //  x += textWidth(text.charAt(i)) *4;
+    //}
+    //for (int i = 2; i < text.length(); i = i + 4 ) {
+    //  letters[i] = new Letter3(x, y, text.charAt(i), font3); 
+    //  x += textWidth(text.charAt(i)) *4;
+    //}
+    //for (int i = 3; i < text.length(); i = i + 4 ) {
+    //  letters[i] = new Letter4(x, y, text.charAt(i), font4); 
+    //  x += textWidth(text.charAt(i)) *4;
+    //}
   }
 
   //calls the functions from letters on specific actions

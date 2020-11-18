@@ -13,4 +13,12 @@ class Letter1 extends Letter {
     textFont(myFont);
     super.display();
   }
+  
+  void shake() {
+    letterSize = lerp(letterSize,letterSize+40,0.01);
+    x = lerp(x, x+50, 0.02);
+    y = lerp(y, y-50, 0.02);
+    x += random(-15, 15);
+    y += random(-15, 15);
+  }
 }

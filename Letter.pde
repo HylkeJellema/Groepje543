@@ -16,7 +16,6 @@ class Letter {
     homeY = this.y = y;
     this.letter = letter;
     letterSize = 0.00001;
-
   }
 
   void display() {
@@ -28,11 +27,11 @@ class Letter {
   //letters lerp to specific place on the right side of card,
   //while also shaking randomly with x and y changes
   void shake() {
-    letterSize = lerp(letterSize,letterSize+40,0.01);
-    x = lerp(x, x+50, 0.02);
-    y = lerp(y, y-50, 0.02);
-    x += random(-10, 10);
-    y += random(-10, 10);
+    //letterSize = lerp(letterSize,letterSize+40,0.01);
+    //x = lerp(x, x+50, 0.02);
+    //y = lerp(y, y-50, 0.02);
+    //x += random(-10, 10);
+    //y += random(-10, 10);
   }
 
   //letters end up at the right spot at the end of the confetti animation
