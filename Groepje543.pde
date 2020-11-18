@@ -42,6 +42,8 @@ void draw() {
     line(600, 0, 600, 900);
     popper.display();
   }
+  
+  
 }
 
 void keyPressed() {
@@ -61,3 +63,20 @@ void mousePressed() {
 void mouseReleased() {
   //popper.text.setShake(false);
 }
+
+void mouseMoved() {
+  //Highlight around mouse
+  background.loadPixels();
+  for (int x = 0; x < width; x++){
+    for (int y = 0; y < height; y++){
+      int location = x+y*width;
+      float r = red(background.pixels[location]);
+      float g = green(background.pixels[location]);
+      float b = blue(background.pixels[location]);
+      float distance = dist(mouseX, mouseY, x,y);
+      float range = map(distance,0,200,2,0);
+      pixels[location] = color(r*range, g*range, b*range);
+    }
+  }
+  updatePixels();
+ }
