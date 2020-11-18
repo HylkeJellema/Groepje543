@@ -9,6 +9,7 @@ class Text {
   String[] lines;
   String text;
   String[] words;
+  
   Letter[] letters;
   boolean shake;
   boolean home;
@@ -19,15 +20,27 @@ class Text {
     //load the text file into individual strings and split into words and letters
     lines = loadStrings("text.txt");
     text = join(lines, " ");
-    words = split(text, " ");
+    //words = split(text, " ");
     letters = new Letter[text.length()];
 
     x = initX;  
     y = initY;
-    for (int i = 0; i < text.length (); i ++ ) {
-      letters[i] = new Letter(x, y, text.charAt(i)); 
+    for (int i = 0; i < text.length()/4; i ++ ) {
+      letters[i] = new Letter1(x, y, text.charAt(i)); 
       x += textWidth(text.charAt(i)) *4;
     }
+    for (int i = text.length()/4; i < text.length()/2; i ++ ) {
+      letters[i] = new Letter2(x, y, text.charAt(i)); 
+      x += textWidth(text.charAt(i)) *4;
+    }
+    for (int i = text.length()/2; i < text.length()*3/4; i ++ ) {
+      letters[i] = new Letter3(x, y, text.charAt(i)); 
+      x += textWidth(text.charAt(i)) *4;
+    }
+    for (int i = text.length()*3/4; i < text.length(); i ++ ) {
+      letters[i] = new Letter4(x, y, text.charAt(i)); 
+      x += textWidth(text.charAt(i)) *4;
+    }    
   }
 
   //calls the functions from letters on specific actions
