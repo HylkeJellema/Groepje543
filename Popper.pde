@@ -53,7 +53,7 @@ class Popper {
       }
       if(timer < 100){
         addConfetti(); //Spawining confetti inbetween the two shapes
-        text.shake = true;
+        text.setShake(true);
       }
       timer(); //Run the timer.
       scaling(); //Run the scaling animation.
@@ -85,8 +85,8 @@ class Popper {
     }
     
     if (timer > 150){
-      text.shake=false;
-      text.home=true;
+      text.setShake(false);
+      text.setHome(true);
     } 
   }
   
