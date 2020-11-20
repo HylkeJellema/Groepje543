@@ -12,6 +12,7 @@ class Gift {
     y = 710;
   }
 
+  //displays the duck when opened or the box when not yet opened
   void display() {
     if (open) {
       image(duck, x-45, y+40, 200, 200);
@@ -20,6 +21,7 @@ class Gift {
     }
   }
 
+  //set open when the mouse is over the gift
   void shake(float Xmouse, float Ymouse) {
     if ((Xmouse <= x+50) && (Xmouse >= x-50) && (Ymouse <=y+50) && (Ymouse >= y-50)) {
       open = true;
