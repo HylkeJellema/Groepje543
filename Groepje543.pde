@@ -18,7 +18,7 @@ void setup() {
   shapeMode(CENTER);
   background = loadImage("background.png");
   front = loadImage("front.png");
-  stage = 2;
+  stage = 1;
   nextStage = false;
   popper = new Popper(width/4, height/2);
   popper.load();
@@ -45,8 +45,6 @@ void draw() {
     line(600, 0, 600, 900);
     popper.display();
   }
-  
-  
 }
 
 void keyPressed() {
@@ -59,18 +57,7 @@ void mousePressed() {
   if (stage == 2){
     popper.pull(mouseX,mouseY);
   }
-  
-  //popper.text.setShake(true);
 }
-
-void mouseReleased() {
-  //popper.text.setShake(false);
-}
-
-void mouseMoved() {
-  //Highlight around mouse
-  
- }
 
 void mouseDragged(){
   gift.shake(mouseX,mouseY); 

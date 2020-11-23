@@ -29,9 +29,9 @@ class TextLine {
     y = initY;
 
     for (int i = 0; i < text.length(); i ++) {
-      int styleChooser = (i % 4) + 1;
+      int styleChooser = (i % 4) + 1; //Go through each style then repeat
       float fontWidth = 0;
-      switch (styleChooser) {
+      switch (styleChooser) { //Defines the style of each letter
 
       case 1: 
         {
@@ -64,7 +64,7 @@ class TextLine {
       x += fontWidth;
     }
   }
-  //calls the functions from letters on specific actions
+ 
   void display() {
     //display individual letters from array
     for (int i = 0; i < letters.length; i++) {
