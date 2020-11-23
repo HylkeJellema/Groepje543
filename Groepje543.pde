@@ -39,7 +39,28 @@ void draw() {
   }
   //show the inside of the card in the second stage
   if (stage==2) {
-    image(background, 0, 0, 1200, 900);
+    //Load background pixel by pixel and change them after the popper.
+    loadPixels();
+    background.loadPixels();
+    for (int x = 0; x < background.width; x++ ) {
+      for (int y = 0; y < background.height; y++ ) {
+        int loc = x + y*background.width;
+        // Get the R,G,B values from image
+        float r = red (background.pixels[loc]);
+        float g = green (background.pixels[loc]);
+        float b = blue (background.pixels[loc]);
+        color c = color(r,g,b);
+        color inverse = color(100-red(c), 100-green(c), 255-blue(c));
+        if(popper.pulled == true & popper.timer < 20){
+        background.pixels[loc] = color(inverse);
+        } else {
+          background.pixels[loc] = color(r,g,b);
+        }
+      }
+    }
+    background.updatePixels();
+    image(background, 0, 0, width, height);
+    
     gift.display();
     stroke(255);
     line(600, 0, 600, 900);
@@ -61,4 +82,10 @@ void mousePressed() {
 
 void mouseDragged(){
   gift.shake(mouseX,mouseY); 
+}
+
+void mouseMoved(){
+  
+  
+  
 }
